@@ -31,5 +31,7 @@ app.use(waterfallServe([
 `waterfallServe` accepts a second argument of options:
 
 `root`: The directory to resolve files paths relative to.
+
 `headers`: An object of headers to send with each request.
+
 `sendOpts`: Additional options to pass to `send`.
