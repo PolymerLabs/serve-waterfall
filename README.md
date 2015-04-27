@@ -1,3 +1,6 @@
+[![NPM version](http://img.shields.io/npm/v/waterfall-serve.svg?style=flat-square)](https://npmjs.org/package/waterfall-serve)
+[![Build Status](http://img.shields.io/travis/Polymer/waterfall-serve.svg?style=flat-square)](https://travis-ci.org/Polymer/waterfall-serve)
+
 # waterfall-serve
 
 Serves static files according to a waterfall of URL to file mappings.
