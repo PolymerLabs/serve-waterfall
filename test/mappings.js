@@ -46,6 +46,13 @@ describe('mappings', function() {
           .expect('bower x-baz\n', done);
     });
 
+    it('serves dependencies from ..', function(done) {
+      supertest(app)
+          .get('/components/x-fizz/x-fizz.html')
+          .expect(200)
+          .expect('x-fizz\n', done);
+    });
+
     it('prefers dependencies from bower_components over siblings', function(done) {
       supertest(app)
           .get('/components/x-bar/x-bar.html')
@@ -58,6 +65,34 @@ describe('mappings', function() {
           .get('/x-foo.html')
           .expect(200)
           .expect('x-foo\n', done);
+    });
+
+    it('serves indexes from the main component', function(done) {
+      supertest(app)
+          .get('/components/x-foo/')
+          .expect(200)
+          .expect('x-foo index\n', done);
+    });
+
+    it('serves indexes from bower_components', function(done) {
+      supertest(app)
+          .get('/components/x-baz/')
+          .expect(200)
+          .expect('bower x-baz index\n', done);
+    });
+
+    it('serves indexes from ..', function(done) {
+      supertest(app)
+          .get('/components/x-fizz/')
+          .expect(200)
+          .expect('x-fizz index\n', done);
+    });
+
+    it('prefers indexes from bower_components', function(done) {
+      supertest(app)
+          .get('/components/x-bar/')
+          .expect(200)
+          .expect('bower x-bar index\n', done);
     });
 
   });

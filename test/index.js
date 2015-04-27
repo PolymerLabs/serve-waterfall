@@ -82,6 +82,13 @@ describe('serveWaterfall', function() {
           .expect('final middleware', done);
     });
 
+    it('serves indexes', function(done) {
+      supertest(serveWaterfall(serveWaterfall.mappings.STATIC, {root: FIXTURES}))
+          .get('/x-foo/')
+          .expect(200)
+          .expect('x-foo index\n', done);
+    });
+
   });
 
 });
