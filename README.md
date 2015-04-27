@@ -1,5 +1,5 @@
 [![NPM version](http://img.shields.io/npm/v/waterfall-serve.svg?style=flat-square)](https://npmjs.org/package/waterfall-serve)
-[![Build Status](http://img.shields.io/travis/Polymer/waterfall-serve.svg?style=flat-square)](https://travis-ci.org/Polymer/waterfall-serve)
+[![Build Status](http://img.shields.io/travis/PolymerLabs/waterfall-serve.svg?style=flat-square)](https://travis-ci.org/PolymerLabs/waterfall-serve)
 
 # waterfall-serve
 
