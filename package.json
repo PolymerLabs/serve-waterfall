@@ -6,7 +6,8 @@
     "express",
     "middleware",
     "static",
-    "server"
+    "server",
+    "waterfall"
   ],
   "homepage": "https://github.com/PolymerLabs/serve-waterfall",
   "bugs": "https://github.com/PolymerLabs/serve-waterfall/issues",
