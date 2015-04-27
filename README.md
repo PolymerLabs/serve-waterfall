@@ -1,23 +1,23 @@
-[![NPM version](http://img.shields.io/npm/v/waterfall-serve.svg?style=flat-square)](https://npmjs.org/package/waterfall-serve)
-[![Build Status](http://img.shields.io/travis/PolymerLabs/waterfall-serve.svg?style=flat-square)](https://travis-ci.org/PolymerLabs/waterfall-serve)
+[![NPM version](http://img.shields.io/npm/v/serve-waterfall.svg?style=flat-square)](https://npmjs.org/package/serve-waterfall)
+[![Build Status](http://img.shields.io/travis/PolymerLabs/serve-waterfall.svg?style=flat-square)](https://travis-ci.org/PolymerLabs/serve-waterfall)
 
-# waterfall-serve
+# serve-waterfall
 
 Serves static files according to a waterfall of URL to file mappings.
 
-Each mapping consists of a URL prefix, and a file system path that it should be mapped to. `waterfall-serve` will attempt each mapping until it finds a file that exists, which it will serve.
+Each mapping consists of a URL prefix, and a file system path that it should be mapped to. `serve-waterfall` will attempt each mapping until it finds a file that exists, which it will serve.
 
 TL;DR:
 ```js
 var app = express();
-app.use(waterfallServe(waterfallServe.mappings.WEB_COMPONENT));
+app.use(serveWaterfall(serveWaterfall.mappings.WEB_COMPONENT));
 ```
 
 Or, provide your own mappings:
 
 ```js
 var app = express();
-app.use(waterfallServe([
+app.use(serveWaterfall([
   {'/components/<basename>': '.'},
   {'/components': 'bower_components'},
   {'/components': '..'},
@@ -28,7 +28,7 @@ app.use(waterfallServe([
 
 ## options
 
-`waterfallServe` accepts a second argument of options:
+`serveWaterfall` accepts a second argument of options:
 
 `root`: The directory to resolve files paths relative to.
 

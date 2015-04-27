@@ -1,5 +1,5 @@
 {
-  "name": "waterfall-serve",
+  "name": "serve-waterfall",
   "version": "1.0.0",
   "description": "Serves static files according to a waterfall of URL to file mappings",
   "keywords": [
@@ -8,15 +8,15 @@
     "static",
     "server"
   ],
-  "homepage": "https://github.com/PolymerLabs/waterfall-serve",
-  "bugs": "https://github.com/PolymerLabs/waterfall-serve/issues",
+  "homepage": "https://github.com/PolymerLabs/serve-waterfall",
+  "bugs": "https://github.com/PolymerLabs/serve-waterfall/issues",
   "license": {
     "type": "BSD-3-Clause",
     "url": "http://polymer.github.io/LICENSE.txt"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/PolymerLabs/waterfall-serve.git"
+    "url": "https://github.com/PolymerLabs/serve-waterfall.git"
   },
   "main": "./lib",
   "scripts": {

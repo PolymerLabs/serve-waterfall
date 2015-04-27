@@ -1,7 +1,7 @@
 var supertest = require('supertest');
 var path      = require('path');
 
-var waterfallServe = require('../lib');
+var serveWaterfall = require('../lib');
 
 var FIXTURES = path.join(__dirname, 'fixtures');
 
@@ -11,7 +11,7 @@ describe('mappings', function() {
 
     var app;
     beforeEach(function() {
-      app = waterfallServe(waterfallServe.mappings.STATIC, {root: FIXTURES});
+      app = serveWaterfall(serveWaterfall.mappings.STATIC, {root: FIXTURES});
     });
 
     it('serves files from the root', function(done) {
@@ -27,7 +27,7 @@ describe('mappings', function() {
 
     var app;
     beforeEach(function() {
-      app = waterfallServe(waterfallServe.mappings.WEB_COMPONENT, {
+      app = serveWaterfall(serveWaterfall.mappings.WEB_COMPONENT, {
         root: path.join(FIXTURES, 'x-foo'),
       });
     });
