@@ -89,6 +89,24 @@ describe('serveWaterfall', function() {
           .expect('x-foo index\n', done);
     });
 
+    it('supports logging', function(done) {
+      var messages = [];
+      var app = serveWaterfall(serveWaterfall.mappings.WEB_COMPONENT, {
+        root: path.join(FIXTURES, 'x-foo'),
+        log:  function(message) { messages.push(message); },
+      });
+      supertest(app)
+          .get('/components/x-fizz/x-fizz.html')
+          .expect(200)
+          .expect('x-fizz\n')
+          .end(function() {
+            expect(messages.length).to.eq(2);
+            expect(messages[0]).to.match(/Tried .*[\/\\]fixtures[\/\\]x-foo[\/\\]bower_components[\/\\]x-fizz[\/\\]x-fizz.html \(404\)/);
+            expect(messages[1]).to.match(/Serving .*[\/\\]fixtures[\/\\]x-fizz[\/\\]x-fizz.html/);
+            done();
+          });
+    });
+
   });
 
 });
