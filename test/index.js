@@ -100,9 +100,14 @@ describe('serveWaterfall', function() {
           .expect(200)
           .expect('x-fizz\n')
           .end(function() {
-            expect(messages.length).to.eq(2);
-            expect(messages[0]).to.match(/Tried .*[\/\\]fixtures[\/\\]x-foo[\/\\]bower_components[\/\\]x-fizz[\/\\]x-fizz.html \(404\)/);
-            expect(messages[1]).to.match(/Serving .*[\/\\]fixtures[\/\\]x-fizz[\/\\]x-fizz.html/);
+            expect(messages.length).to.eq(7);
+            expect(messages[0]).to.match(/expanded/i);
+            expect(messages[1]).to.match(/\/components\/x-foo -> .*[\/\\]fixtures[\/\\]x-foo/);
+            expect(messages[2]).to.match(/\/components -> .*[\/\\]fixtures[\/\\]x-foo[\/\\]bower_components/);
+            expect(messages[3]).to.match(/\/components -> .*[\/\\]fixtures/);
+            expect(messages[4]).to.match(/\/ -> .*[\/\\]fixtures[\/\\]x-foo/);
+            expect(messages[5]).to.match(/Tried .*[\/\\]fixtures[\/\\]x-foo[\/\\]bower_components[\/\\]x-fizz[\/\\]x-fizz.html \(404\)/i);
+            expect(messages[6]).to.match(/Serving .*[\/\\]fixtures[\/\\]x-fizz[\/\\]x-fizz.html/i);
             done();
           });
     });
